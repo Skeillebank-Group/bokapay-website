@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="BokaPay">
+  <rect width="64" height="64" rx="16" fill="#0f7b5f"/>
+  <path d="M14 14h12v4h-8v8h-4z M50 14v12h-4v-8h-8v-4z M14 50V38h4v8h8v4z" fill="#ffffff"/>
+  <path d="M30 41l-7-7 3.2-3.2 3.8 3.8 11.8-11.8L45 26z" fill="#f4b942"/>
+</svg>
