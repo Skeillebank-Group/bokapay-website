@@ -4,8 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BokaPay — Get paid on the job, straight to your account</title>
-<meta name="description" content="BokaPay lets tradespeople take payments from their phone. Show a QR code, your customer pays by bank or card on their own phone, and the money goes to your own account. BokaPay never holds your money.">
+<meta name="description" content="BokaPay lets tradespeople take payments from their phone. Show a QR code or send a link, your customer pays by bank or card on their own phone, and the money goes to your own account. BokaPay never holds your money.">
 <link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#0f7b5f">
+<link rel="canonical" href="https://bokapay.co.uk/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BokaPay">
+<meta property="og:title" content="BokaPay: get paid on the job, straight to your account">
+<meta property="og:description" content="Take payments from your phone: Pay by Bank, card or free bank transfer, straight to your own account. For tradespeople in Northern Ireland and the UK.">
+<meta property="og:url" content="https://bokapay.co.uk/">
+<meta property="og:image" content="https://bokapay.co.uk/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="BokaPay: Get paid on the job. Straight to your account.">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -26,7 +39,7 @@
     <div>
       <p class="eyebrow">For tradespeople in Northern Ireland and the UK: plumbers, electricians, builders, installers and more</p>
       <h1>Get paid on the job. Straight to your account.</h1>
-      <p class="lead">Take payments from your phone, with no card machine. Type the amount and show the QR code. Your customer pays from their banking app or by card on their own phone, and the money goes to <strong>your own account</strong>. BokaPay never holds it.</p>
+      <p class="lead">Take payments from your phone, with no card machine. Type the amount and show the QR code, or send a payment link. Your customer pays from their banking app or by card on their own phone, and the money goes to <strong>your own account</strong>. BokaPay never holds it.</p>
       <div class="cta-row">
         <a class="btn primary" href="mailto:info@bokapay.co.uk?subject=BokaPay%20pilot">Join the pilot</a>
         <a class="btn ghost" href="#how">See how it works</a>
@@ -49,9 +62,9 @@
     </div>
     <ol class="steps">
       <li><h3>Enter the amount</h3><p>Type what the customer owes in the BokaPay app.</p></li>
-      <li><h3>Show the QR code</h3><p>Your customer scans it with their phone camera.</p></li>
-      <li><h3>They pay</h3><p>With Pay by Bank, approving the payment in their own banking app, or by card.</p></li>
-      <li><h3>You see "Paid"</h3><p>The app confirms as soon as the payment goes through.</p></li>
+      <li><h3>Show the QR code</h3><p>Your customer scans it with their phone camera, or you send them a payment link by WhatsApp or text.</p></li>
+      <li><h3>They pay</h3><p>With Pay by Bank in their own banking app, by card, or by a normal bank transfer to your account.</p></li>
+      <li><h3>You see "Paid"</h3><p>Automatically for Pay by Bank and card. For a bank transfer, you tap "Received" when it lands.</p></li>
     </ol>
     <p class="note">Money is paid out to your bank account on your payment account's normal payout schedule.</p>
   </section>
@@ -78,7 +91,9 @@
         <h3>In the pilot</h3>
         <ul class="ticks">
           <li>QR payments at the till or on the doorstep</li>
-          <li>Pay by Bank and card</li>
+          <li>Pay by Bank, card, or free bank transfer</li>
+          <li>Send a payment link by WhatsApp, text or email</li>
+          <li>Receipts for your customers</li>
           <li>Live "Paid" confirmation in the app</li>
           <li>Full and partial refunds</li>
           <li>Today's takings at a glance</li>
@@ -107,7 +122,8 @@
         <p><strong>BokaPay never holds your money.</strong> Payments go directly to your own payment account, in your business's name, and from there to your bank.</p>
       </div>
       <ul class="ticks">
-        <li><span><strong>Payments are processed by Stripe.</strong> You set up your payment account with Stripe when you sign up, and Stripe verifies your business.</span></li>
+        <li><span><strong>Pay by Bank and card payments are processed by Stripe.</strong> You set up your own Stripe account when you sign up, and Stripe verifies your business.</span></li>
+        <li><span><strong>Bank transfers go straight to your bank account.</strong> Your customer sees your details, the amount and a unique reference, with copy buttons. No Stripe account needed.</span></li>
         <li><span><strong>Refunds go back to the customer</strong> the same way they paid.</span></li>
         <li><span><strong>Pay by Bank</strong> means your customer approves the payment in their own banking app. No card details to type or steal.</span></li>
       </ul>
@@ -122,12 +138,13 @@
     <table class="price-table">
       <thead><tr><th scope="col">Payment method</th><th scope="col">Payment processing, per payment</th></tr></thead>
       <tbody>
-        <tr><td>Pay by Bank</td><td>0.5% + 20p, capped at £5</td></tr>
+        <tr><td>Bank transfer <span style="font-weight:400;color:var(--muted)">(you confirm it arrived)</span></td><td>Free</td></tr>
+        <tr><td>Pay by Bank <span style="font-weight:400;color:var(--muted)">(confirmed automatically)</span></td><td>0.5% + 20p, capped at £5</td></tr>
         <tr><td>UK cards</td><td>1.5% + 20p</td></tr>
         <tr><td>BokaPay fee</td><td>Free during the pilot</td></tr>
       </tbody>
     </table>
-    <p class="fineprint">Payment processing fees are Stripe's standard UK rates and are charged by Stripe on your account. Other cards, such as European or international cards, cost more; see <a href="https://stripe.com/gb/pricing">Stripe's pricing</a>.</p>
+    <p class="fineprint">Pay by Bank and card fees are Stripe's standard UK rates and are charged by Stripe on your account. Other cards, such as European or international cards, cost more; see <a href="https://stripe.com/gb/pricing">Stripe's pricing</a>.</p>
   </section>
 
   <section id="faq">
@@ -136,12 +153,13 @@
     </div>
     <div class="faq">
       <details><summary>Do I need a card machine?</summary><p>No. You use the BokaPay app on your phone, and your customer uses theirs.</p></details>
-      <details><summary>When do I get my money?</summary><p>Payments land in your payment account and are paid out to your bank on your normal payout schedule.</p></details>
-      <details><summary>What if my customer's bank doesn't support Pay by Bank?</summary><p>They can pay by card instead, on the same page.</p></details>
-      <details><summary>Can I give a refund?</summary><p>Yes, full or partial, from the app.</p></details>
-      <details><summary>Does BokaPay ever hold my money?</summary><p>No. Payments go straight to your own payment account.</p></details>
+      <details><summary>When do I get my money?</summary><p>Bank transfers go straight into your bank account. Pay by Bank and card payments land in your Stripe account and are paid out to your bank on your normal payout schedule.</p></details>
+      <details><summary>Do I need a Stripe account?</summary><p>Only for Pay by Bank and card. You can start with free bank transfers using just your bank details, and add Stripe later; we set it up for you during sign-up.</p></details>
+      <details><summary>What if my customer's bank doesn't support Pay by Bank?</summary><p>They can pay by card or by bank transfer instead, on the same page.</p></details>
+      <details><summary>Can I give a refund?</summary><p>Yes, full or partial. Pay by Bank and card refunds are made from the app. For a bank transfer, you send the money back from your bank and record it in the app.</p></details>
+      <details><summary>Does BokaPay ever hold my money?</summary><p>No. Payments go straight to your own bank or Stripe account.</p></details>
       <details><summary>Does BokaPay help with Making Tax Digital?</summary><p>BokaPay keeps a digital record of every payment you take through it, which you or your accountant can use for your records. It doesn't send anything to HMRC itself; your accounting software or accountant still does that.</p></details>
-      <details><summary>What do I need to sign up?</summary><p>Your business details and bank account, so Stripe can verify your business. Sole traders are welcome.</p></details>
+      <details><summary>What do I need to sign up?</summary><p>Your business details and bank account. For Pay by Bank and card, Stripe also verifies your business. Sole traders are welcome.</p></details>
     </div>
   </section>
 
