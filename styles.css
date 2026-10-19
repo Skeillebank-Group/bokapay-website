@@ -177,3 +177,9 @@ footer.sfoot { display: grid; justify-items: center; text-align: center; gap: 0;
 
 .family-label img{height:24px; width:auto; border-radius:0;}
 a.family-label{display:inline-flex; align-items:center; justify-content:center; gap:8px; text-decoration:none;}
+
+/* Two-colour wordmark: "Boka" orange, "Pay" green (lighter shades on dark). */
+.wm-boka { color: #b7791f; }
+.wm-pay { color: var(--accent); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .wm-boka { color: var(--brand-yellow); } }
+:root[data-theme="dark"] .wm-boka { color: var(--brand-yellow); }
