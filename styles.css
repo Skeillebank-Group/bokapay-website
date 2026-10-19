@@ -145,3 +145,35 @@ footer { border-top: 1px solid var(--line); padding-block: 28px 40px; display: g
   .price-table td:last-child { white-space: normal; }
   .pilot { padding: 24px; }
 }
+
+/* Layout from the brand voice (voice.md): closing lines, a breathing section, what BokaPay leaves out, the Skeillebank family */
+.land { margin-top: 40px; font-family: var(--display); font-weight: 650; font-size: clamp(22px, 2.6vw, 28px); line-height: 1.25; max-width: 28em; text-wrap: balance; }
+.land::before { content: ""; display: block; width: 40px; height: 3px; background: var(--brand-yellow); margin-bottom: 16px; }
+section.breath { padding-block: 100px; }
+.breath p { font-family: var(--display); font-weight: 700; font-size: clamp(28px, 4.2vw, 46px); line-height: 1.12; letter-spacing: -0.015em; max-width: 19em; text-wrap: balance; }
+.breath p span { color: var(--muted); }
+.without { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px 40px; }
+.without li { border-top: 1.5px solid var(--fg); padding-top: 16px; display: grid; gap: 8px; align-content: start; }
+.without h3 { font-size: 21px; display: flex; gap: 10px; align-items: baseline; }
+.without h3::before { content: "✕"; color: #c0392b; font-size: 17px; }
+.without p { color: var(--muted); font-size: 15.5px; }
+.family { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; padding-bottom: 16px; margin-bottom: 6px; border-bottom: 1px solid var(--line); }
+.family-label { font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+.family a.fam { display: inline-flex; align-items: center; gap: 8px; color: var(--fg); font-weight: 600; font-size: 15px; text-decoration: none; }
+.family a.fam:hover, .family-label:hover { color: var(--accent); }
+.family img { width: 28px; height: 28px; border-radius: 7px; display: block; }
+@media (max-width: 900px) { .without { grid-template-columns: minmax(0, 1fr); gap: 28px; } section.breath { padding-block: 64px; } }
+
+/* Footer, centred and stacked like every Skeillebank site: wordmark, page links, the family, then the legal line. */
+footer.sfoot { display: grid; justify-items: center; text-align: center; gap: 0; padding-block: 44px 40px; }
+.sfoot .wordmark { justify-content: center; }
+.sfoot-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 26px; margin-top: 18px; font-size: 15px; }
+.sfoot-links a { color: var(--muted); text-decoration: none; }
+.sfoot-links a:hover { color: var(--fg); }
+.sfoot .family { width: 100%; justify-content: center; margin: 26px 0 0; padding: 24px 0 0; border-top: 1px solid var(--line); border-bottom: none; }
+.sfoot .family-label { flex-basis: 100%; text-align: center; margin-bottom: 2px; }
+.sfoot-fine { width: 100%; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); display: grid; gap: 6px; font-size: 13.5px; color: var(--muted); }
+.sfoot-fine a { color: inherit; }
+
+.family-label img{height:24px; width:auto; border-radius:0;}
+a.family-label{display:inline-flex; align-items:center; justify-content:center; gap:8px; text-decoration:none;}
