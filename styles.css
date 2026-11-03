@@ -100,12 +100,15 @@ section { padding-block: 72px; border-top: 1px solid var(--line); scroll-margin-
 
 .two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: start; }
 .two h3 { font-size: 20px; margin-bottom: 14px; }
-.ticks { list-style: none; padding: 0; display: grid; gap: 10px; }
-.ticks li { padding-left: 28px; position: relative; }
-.ticks li::before { content: ""; position: absolute; left: 0; top: 0.45em; width: 14px; height: 8px; border-left: 2.5px solid var(--accent); border-bottom: 2.5px solid var(--accent); transform: rotate(-45deg); }
-.soon li { padding-left: 28px; position: relative; color: var(--muted); }
-.soon li::before { content: ""; position: absolute; left: 2px; top: 0.5em; width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--muted); }
-.soon { list-style: none; padding: 0; display: grid; gap: 10px; }
+/* Tick lists (voice.md, 31 Oct 2026): the apps' filled circle and tick, centred on the first line. */
+.ticks { list-style: none; padding: 0; display: grid; gap: 12px; }
+.ticks li { padding-left: 34px; position: relative; }
+.ticks li::before, .ticks li::after { content: ""; position: absolute; left: 0; top: calc(0.5lh - 11px); width: 22px; height: 22px; }
+.ticks li::before { border-radius: 50%; background: var(--accent); }
+.ticks li::after { background: var(--accent-fg); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") center / 15px no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") center / 15px no-repeat; }
+.soon li { padding-left: 34px; position: relative; color: var(--muted); }
+.soon li::before { content: ""; position: absolute; left: 0; top: calc(0.5lh - 11px); width: 22px; height: 22px; box-sizing: border-box; border-radius: 50%; border: 1.5px solid var(--muted); }
+.soon { list-style: none; padding: 0; display: grid; gap: 12px; }
 
 .callout { padding: 22px 24px; border-left: 4px solid var(--accent); background: var(--surface); border-radius: 0 12px 12px 0; display: grid; gap: 10px; }
 
