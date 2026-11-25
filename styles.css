@@ -28,6 +28,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+html, body { overflow-x: clip; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
   margin: 0;
@@ -40,7 +41,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 .wrap { max-width: 1080px; margin-inline: auto; }
-h1, h2, h3 { font-family: var(--display); font-weight: 650; line-height: 1.12; letter-spacing: -0.015em; margin: 0; text-wrap: balance; }
+h1, h2, h3 { font-family: var(--display); font-weight: 650; line-height: 1.12; letter-spacing: -0.015em; margin: 0; text-wrap: balance; overflow-wrap: break-word; min-width: 0; }
 p, ul, ol { margin: 0; }
 a { color: inherit; }
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
@@ -57,16 +58,16 @@ a { color: inherit; }
 .nav a:hover { color: var(--fg); }
 
 /* buttons */
-.btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 16px; padding: 13px 22px; border-radius: 999px; border: 1.5px solid var(--fg); }
+.btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 16px; padding: 13px 22px; border-radius: 999px; border: 1.5px solid var(--fg); white-space: nowrap; }
 .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-fg); }
 .btn.primary:hover { filter: brightness(1.08); }
 .btn.ghost:hover { background: var(--surface); }
+.btn:active { transform: translateY(1px); }
 
 /* hero */
 .hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 48px; align-items: center; padding-block: 72px 80px; }
-.eyebrow { font-size: 14px; font-weight: 600; color: var(--accent); }
-.hero h1 { font-size: clamp(38px, 6vw, 60px); margin-top: 12px; }
-.status-note { display: inline-block; margin-top: 12px; font-size: 14px; font-weight: 600; color: var(--fg); background: var(--accent-soft); border-radius: 999px; padding: 6px 14px; }
+.hero h1 { font-size: clamp(38px, 6vw, 60px); }
+.status-note { display: inline-block; margin-top: 20px; font-size: 14px; font-weight: 600; color: var(--fg); background: var(--accent-soft); border-radius: 999px; padding: 6px 14px; }
 .hero .lead { margin-top: 22px; font-size: 19px; color: var(--muted); max-width: 32em; }
 .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
 
@@ -110,7 +111,7 @@ section { padding-block: 72px; border-top: 1px solid var(--line); scroll-margin-
 .soon li::before { content: ""; position: absolute; left: 0; top: calc(0.5lh - 11px); width: 22px; height: 22px; box-sizing: border-box; border-radius: 50%; border: 1.5px solid var(--muted); }
 .soon { list-style: none; padding: 0; display: grid; gap: 12px; }
 
-.callout { padding: 22px 24px; border-left: 4px solid var(--accent); background: var(--surface); border-radius: 0 12px 12px 0; display: grid; gap: 10px; }
+.callout { padding: 22px 24px; border: 1px solid var(--line); background: var(--surface); border-radius: 12px; display: grid; gap: 10px; }
 
 /* pricing */
 .price-table { width: 100%; border-collapse: collapse; font-size: 16px; }
@@ -129,6 +130,8 @@ section { padding-block: 72px; border-top: 1px solid var(--line); scroll-margin-
 .pilot p { color: var(--muted); margin-top: 10px; }
 
 footer { border-top: 1px solid var(--line); padding-block: 28px 40px; display: grid; gap: 6px; color: var(--muted); font-size: 14px; }
+.foot-links { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+.foot-links a { white-space: nowrap; }
 
 /* legal pages */
 .doc { max-width: 46em; padding-block: 56px 72px; }
@@ -163,7 +166,7 @@ section.breath { padding-block: 100px; }
 .without h3::before { content: "✕"; color: #c0392b; font-size: 17px; }
 .without p { color: var(--muted); font-size: 15.5px; }
 .family { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; padding-bottom: 16px; margin-bottom: 6px; border-bottom: 1px solid var(--line); }
-.family-label { font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+.family-label { font-size: 14px; font-weight: 500; color: var(--muted); text-decoration: none; }
 .family a.fam { display: inline-flex; align-items: center; gap: 8px; color: var(--fg); font-weight: 600; font-size: 15px; text-decoration: none; }
 .family a.fam:hover, .family-label:hover { color: var(--accent); }
 .family img { width: 28px; height: 28px; border-radius: 7px; display: block; }
@@ -183,8 +186,9 @@ footer.sfoot { display: grid; justify-items: center; text-align: center; gap: 0;
 .family-label img{height:24px; width:auto; border-radius:0;}
 a.family-label{display:inline-flex; align-items:center; justify-content:center; gap:8px; text-decoration:none;}
 
-/* Two-colour wordmark: "Boka" orange, "Pay" green (lighter shades on dark). */
-.wm-boka { color: #b7791f; }
+/* Two-colour wordmark: "Boka" orange, "Pay" green (lighter shades on dark).
+   The logo orange #b7791f is 3.6:1 on white, so the text uses a darker shade of the same hue (5:1). */
+.wm-boka { color: #9a6418; }
 .wm-pay { color: var(--accent); }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .wm-boka { color: var(--brand-yellow); } }
 :root[data-theme="dark"] .wm-boka { color: var(--brand-yellow); }
